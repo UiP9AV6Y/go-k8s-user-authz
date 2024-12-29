@@ -1,4 +1,4 @@
-package userauthz
+package userinfo
 
 import (
 	"k8s.io/api/authentication/v1"

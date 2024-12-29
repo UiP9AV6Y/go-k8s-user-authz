@@ -1,10 +1,11 @@
-package userauthz_test
+package userinfo_test
 
 import (
 	"context"
 	"testing"
 
 	"github.com/UiP9AV6Y/go-k8s-user-authz"
+	"github.com/UiP9AV6Y/go-k8s-user-authz/userinfo"
 )
 
 func TestRequireExtra(t *testing.T) {
@@ -53,7 +54,7 @@ func TestRequireExtra(t *testing.T) {
 
 	for name, test := range tests {
 		t.Run(name, func(t *testing.T) {
-			subject := userauthz.RequireExtra(test.haveKey, test.haveValue)
+			subject := userinfo.RequireExtra(test.haveKey, test.haveValue)
 			got := subject.Authorize(context.Background(), double)
 
 			if got != test.want {
@@ -109,7 +110,7 @@ func TestRejectExtra(t *testing.T) {
 
 	for name, test := range tests {
 		t.Run(name, func(t *testing.T) {
-			subject := userauthz.RejectExtra(test.haveKey, test.haveValue)
+			subject := userinfo.RejectExtra(test.haveKey, test.haveValue)
 			got := subject.Authorize(context.Background(), double)
 
 			if got != test.want {
