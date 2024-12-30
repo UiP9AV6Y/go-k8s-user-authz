@@ -1,4 +1,4 @@
-package authztest
+package usertest
 
 import (
 	"hash/maphash"
@@ -7,6 +7,7 @@ import (
 	_ "k8s.io/apiserver/pkg/authentication/user"
 )
 
+// MockExtraKey is the key used for the [MockUser] extra values.
 const MockExtraKey = "github.com/UiP9AV6Y/go-k8s-user-authz"
 
 var mockSeed = maphash.MakeSeed()
