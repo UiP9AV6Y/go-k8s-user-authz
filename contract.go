@@ -41,9 +41,8 @@ func Decisionf(format string, args ...interface{}) Decision {
 
 // Authorizer makes an authorization decision based on information gained by making
 // zero or more calls to methods of the [user.Info] interface.
-// Any returned error originates from the underlying data source and does not necessarily
-// indicate a [DecisionDeny]; Implementation can chose to withold a decision by returning
-// [DecisionNoOpinion] as consumers are unlikely to accept a positive response accompanied by an error.
+// Implementations can chose to withold a decision by returning [DecisionNoOpinion]
+// and leave the final decision to consumers.
 type Authorizer interface {
 	Authorize(ctx context.Context, u user.Info) Decision
 }
