@@ -17,7 +17,7 @@ func mockUserInfo() user.Info {
 	}
 	info := v1.UserInfo{
 		Username: "mock",
-		UID:      "1234567890",
+		UID:      "user567890",
 		Groups:   groups,
 		Extra:    extra,
 	}
